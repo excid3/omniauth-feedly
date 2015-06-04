@@ -52,8 +52,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
-### For sandbox.feedly.com
-Remember: 
+### For sandbox.feedly.com 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
 	provider :feedly, ENV['FEEDLY_SANDBOX_KEY'], ENV['FEEDLY_SANDBOX_SECRET'],
@@ -65,7 +64,7 @@ end
 
 ## Contributing
 
-If anything changes, with how feedly handles developer registration or the api, please let me know so I can update the README and/or code. 
+If anything changes with how feedly handles developer registration or the api, please let me know so I can update the README and/or code. 
 
 1. Fork it ( https://github.com/johnmpotter/omniauth-feedly/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
