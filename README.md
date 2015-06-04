@@ -2,7 +2,7 @@
 
 Unofficial OmniAuth strategy for Feedly OAuth 2.
 
-For more on the Feedly API, go to [developer.feedly.com][https://developer.feedly.com/].
+For more on the Feedly API, go to [developer.feedly.com](https://developer.feedly.com/).
 
 ## Installation
 
