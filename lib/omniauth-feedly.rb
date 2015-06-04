@@ -1,7 +1,2 @@
-require "omniauth/feedly/version"
-
-module Omniauth
-  module Feedly
-    # Your code goes here...
-  end
-end
+require 'omniauth-feedly/version'
+require 'omniauth/strategies/feedly'
