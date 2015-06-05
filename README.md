@@ -6,19 +6,21 @@ For more on the Feedly API, go to [developer.feedly.com](https://developer.feedl
 
 You can also check out the developer forum at https://groups.google.com/forum/#!forum/feedly-cloud.
 
+Once you authorize your user, you can make calls to the Feedly API using the gem (Feedlr)[https://github.com/khelll/feedlr]
+
 ## Getting Started
 
 ###For Development
 
 Feedly development is done on sandbox.feedly.com. 
 
-You will need to use the sandbox id and secret. The callback url used needs to be one that Feedly has in their system. 
+You will need to use the sandbox id and secret. You can find that info here: [forum post](https://groups.google.com/forum/#!topic/feedly-cloud/ZNn0UUOyCZw)
 
-The callback this gem uses is: http://localhost:3000/auth/feedly/callback. 
+The callback url used needs to be one that Feedly has in their system. The callback this gem uses is: http://localhost:3000/auth/feedly/callback. That means that you must make calls from 'http://localhost:3000'. 
 
 You are welcome to set your own callback url, but you will have to have Feedly add it on their end as well.
 
-More info about the sandbox access: [forum post](https://groups.google.com/forum/#!topic/feedly-cloud/ZNn0UUOyCZw) and [docs](https://developer.feedly.com/v3/sandbox/).
+More info about the sandbox: [docs](https://developer.feedly.com/v3/sandbox/).
 
 ###For Production
 
