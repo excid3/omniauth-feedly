@@ -12,7 +12,11 @@ You can also check out the developer forum at https://groups.google.com/forum/#!
 
 Feedly development is done on sandbox.feedly.com. 
 
-You will need to use the sandbox id and secret, but the caveat here is that your development redirect url must be one of the following: "http://localhost", "https://localhost", "http://localhost:8080", "urn:ietf:wg:oauth:2.0:oob". Obvioulsy not ideal for us port 3000ers, so i'm going to see if we can get port 3000 added.
+You will need to use the sandbox id and secret. The callback url used needs to be one that Feedly has in their system. 
+
+The callback this gem uses is: http://localhost:3000/auth/feedly/callback. 
+
+You are welcome to set your own callback url, but you will have to have Feedly add it on their end as well.
 
 More info about the sandbox access: [forum post](https://groups.google.com/forum/#!topic/feedly-cloud/ZNn0UUOyCZw) and [docs](https://developer.feedly.com/v3/sandbox/).
 
@@ -45,14 +49,8 @@ Or install it yourself as:
 
 ## Usage
 
-### For cloud.feedly.com 
-```ruby
-Rails.application.config.middleware.use OmniAuth::Builder do
-	provider :feedly, ENV['FEEDLY_KEY'], ENV['FEEDLY_SECRET']
-end
-```
-
-### For sandbox.feedly.com 
+### For Development (sandbox.feedly.com)
+Remember: Calls must be made from http://localhost:3000 (see Getting Started for more info) 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
 	provider :feedly, ENV['FEEDLY_SANDBOX_KEY'], ENV['FEEDLY_SANDBOX_SECRET'],
@@ -61,6 +59,22 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 	}
 end
 ```
+
+### For Production (cloud.feedly.com)
+```ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+	provider :feedly, ENV['FEEDLY_KEY'], ENV['FEEDLY_SECRET']
+end
+```
+
+### Routing the callback
+Simply add to your routes.rb file:
+```ruby
+get '/auth/feedly/callback', to: 'your_controller#your_action'
+```
+
+For more on integrating OmniAuth into your app: [OmniAuth Gem](https://github.com/intridea/omniauth#integrating-omniauth-into-your-application)
+
 
 ## Contributing
 
