@@ -1,5 +1,7 @@
 # OmniAuth for Feedly
 
+[![Gem Version](http://img.shields.io/gem/v/omniauth.svg)][gem]
+
 Unofficial OmniAuth strategy for Feedly OAuth 2.
 
 For more on the Feedly API, go to [developer.feedly.com](https://developer.feedly.com/).
